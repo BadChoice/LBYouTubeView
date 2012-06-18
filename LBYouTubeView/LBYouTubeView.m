@@ -209,10 +209,13 @@ static NSString* const kLBYouTubeViewErrorDomain = @"LBYouTubeViewErrorDomain";
 }
 
 -(void)play {
+
     if (self.controller) {
+        [self.controller setFullscreen:YES animated:YES];
         [self.controller play];
     }
     else {
+        [self.controller setFullscreen:YES animated:YES];
         self.shouldAutomaticallyStartPlaying = YES;
     }
 }
