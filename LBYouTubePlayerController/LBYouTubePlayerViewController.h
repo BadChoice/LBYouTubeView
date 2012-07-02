@@ -15,7 +15,7 @@ extern NSInteger const LBYouTubePlayerControllerErrorCodeNoStreamURL;
 extern NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData;
 
 typedef enum {
-    LBYouTubePlayerQualitySmall       = 0,
+    LBYouTubePlayerQualitySmall    = 0,
     LBYouTubePlayerQualityMedium   = 1,
     LBYouTubePlayerQualityLarge    = 2,
 } LBYouTubePlayerQuality;
