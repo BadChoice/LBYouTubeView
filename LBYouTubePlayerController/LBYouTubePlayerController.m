@@ -64,6 +64,10 @@
     [self addSubview:self.controller.view];
 }
 
+-(void)stop{
+	[self.controller stop];
+}
+
 #pragma mark -
 
 @end
