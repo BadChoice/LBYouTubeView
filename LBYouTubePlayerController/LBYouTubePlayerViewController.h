@@ -15,7 +15,7 @@ extern NSInteger const LBYouTubePlayerControllerErrorCodeNoStreamURL;
 extern NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData;
 
 typedef enum {
-    LBYouTubePlayerQualitySmall       = 0,
+    LBYouTubePlayerQualitySmall    = 0,
     LBYouTubePlayerQualityMedium   = 1,
     LBYouTubePlayerQualityLarge    = 2,
 } LBYouTubePlayerQuality;
@@ -38,11 +38,14 @@ typedef enum {
 
 -(id)initWithYouTubeURL:(NSURL*)youTubeURL;
 -(id)initWithYouTubeID:(NSString*)youTubeID;
+-(void) stopVideo;
 
 @end
 @protocol LBYouTubePlayerControllerDelegate <NSObject>
 
 -(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller didSuccessfullyExtractYouTubeURL:(NSURL *)videoURL;
 -(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller failedExtractingYouTubeURLWithError:(NSError *)error;
+
+
 
 @end

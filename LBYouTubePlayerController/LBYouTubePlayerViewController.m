@@ -273,6 +273,11 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
     [self _failedExtractingYouTubeURLWithError:error];
 }
 
+-(void) stopVideo{
+	[view stop];
+}
+
+
 #pragma mark -
 
 @end
