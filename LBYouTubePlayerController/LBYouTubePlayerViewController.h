@@ -38,6 +38,7 @@ typedef enum {
 
 -(id)initWithYouTubeURL:(NSURL*)youTubeURL;
 -(id)initWithYouTubeID:(NSString*)youTubeID;
+-(void) stopVideo;
 
 @end
 @protocol LBYouTubePlayerControllerDelegate <NSObject>
@@ -45,6 +46,6 @@ typedef enum {
 -(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller didSuccessfullyExtractYouTubeURL:(NSURL *)videoURL;
 -(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller failedExtractingYouTubeURLWithError:(NSError *)error;
 
--(void) stop;
+
 
 @end
