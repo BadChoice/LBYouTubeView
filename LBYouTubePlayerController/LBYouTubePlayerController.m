@@ -64,7 +64,7 @@
     [self addSubview:self.controller.view];
 }
 
--(void)stop{
+-(void)stopVideo{
 	[self.controller stop];
 }
 

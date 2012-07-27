@@ -274,7 +274,8 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
 }
 
 -(void) stopVideo{
-	[view stop];
+	[view stopVideo];
+	[self _closeConnection];
 }
 
 

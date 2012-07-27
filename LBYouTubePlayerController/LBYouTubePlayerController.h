@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong, readonly) MPMoviePlayerController* controller;
 
--(void)loadYouTubeVideo:(NSURL*)URL;
--(void) stop;
+-(void) loadYouTubeVideo:(NSURL*)URL;
+-(void) stopVideo;
 
 @end
