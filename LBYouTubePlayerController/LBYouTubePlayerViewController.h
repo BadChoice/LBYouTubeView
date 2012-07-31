@@ -35,6 +35,7 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSURL *extractedURL;
 @property (nonatomic, strong, readonly) LBYouTubePlayerController* view;
 @property (nonatomic, unsafe_unretained) IBOutlet id <LBYouTubePlayerControllerDelegate> delegate;
+@property (nonatomic, unsafe_unretained) BOOL mEnabled;
 
 -(id)initWithYouTubeURL:(NSURL*)youTubeURL;
 -(id)initWithYouTubeID:(NSString*)youTubeID;

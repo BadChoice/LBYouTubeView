@@ -43,7 +43,7 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
 @end
 @implementation LBYouTubePlayerViewController
 
-@synthesize youTubeURL, quality, extractedURL, view, delegate, buffer, connection;
+@synthesize youTubeURL, quality, extractedURL, view, delegate, buffer, connection, mEnabled;
 
 #pragma mark
 
@@ -62,6 +62,7 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
     self = [super init];
     if (self) {
         [self _setupWithYouTubeURL:URL];
+		mEnabled = YES;
     }
     return self;
 }
@@ -218,9 +219,11 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
 #pragma mark Delegate Calls
 
 -(void)_didSuccessfullyExtractYouTubeURL:(NSURL *)videoURL {
-    if ([self.delegate respondsToSelector:@selector(youTubePlayerViewController:didSuccessfullyExtractYouTubeURL:)]) {
-        [self.delegate youTubePlayerViewController:self didSuccessfullyExtractYouTubeURL:videoURL];
-    }
+	if(mEnabled){
+		if ([self.delegate respondsToSelector:@selector(youTubePlayerViewController:didSuccessfullyExtractYouTubeURL:)]) {
+			[self.delegate youTubePlayerViewController:self didSuccessfullyExtractYouTubeURL:videoURL];
+		}
+	}
 }
 
 -(void)_failedExtractingYouTubeURLWithError:(NSError *)error {
@@ -276,6 +279,7 @@ NSInteger const LBYouTubePlayerControllerErrorCodeNoJSONData   =    3;
 -(void) stopVideo{
 	[view stopVideo];
 	[self _closeConnection];
+	mEnabled = NO;
 }
 
 
